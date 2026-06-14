@@ -13,7 +13,7 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
 
   const handleGoogleLogin = () => {
-    const clientId = 'YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com';
+    const clientId = '683507397801-c0tn79l4jvlctfc4kjorgmfql8g13m5e.apps.googleusercontent.com';
     const redirectUri = window.location.origin + '/seo-tools/';
     const scope = 'openid email profile';
     const url = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=token&scope=${encodeURIComponent(scope)}&prompt=select_account`;
