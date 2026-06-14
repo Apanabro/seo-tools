@@ -37,7 +37,7 @@ const Footer = () => {
                 <circle cx="21" cy="21" r="9" stroke="white" strokeWidth="3" fill="none"/>
                 <line x1="27.5" y1="27.5" x2="36" y2="36" stroke="white" strokeWidth="3.5" strokeLinecap="round"/>
               </svg>
-              <span>SEO Toolkit</span>
+              <span>SEO Tools</span>
             </div>
             <p>Professional SEO tools powered by browser automation. Analyze, audit, and optimize your website for better search rankings.</p>
           </div>
@@ -66,7 +66,7 @@ const Footer = () => {
           <div className="footer-section">
             <h4>Support</h4>
             <ul>
-              <li><a href="mailto:support@seo-toolkit.com">Contact Us</a></li>
+              <li><a href="mailto:support@seo-tools.com">Contact Us</a></li>
               <li><a href="/privacy">Privacy Policy</a></li>
               <li><a href="/terms">Terms of Service</a></li>
             </ul>
@@ -76,7 +76,7 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <div className="footer-bottom-content">
-          <p>&copy; {currentYear} SEO Toolkit. All rights reserved.</p>
+          <p>&copy; {currentYear} SEO Tools. All rights reserved.</p>
           <div className="footer-badges">
             <span className="badge">100% Free</span>
             <span className="badge">No Signup</span>
