@@ -57,7 +57,7 @@ const Navbar = () => {
               <line x1="27.5" y1="27.5" x2="36" y2="36" stroke="white" strokeWidth="3.5" strokeLinecap="round"/>
               <path d="M33 8 L33 17 M28.5 12.5 L33 8 L37.5 12.5" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-            <span className="brand-text">SEO Toolkit</span>
+            <span className="brand-text">SEO Tools</span>
           </motion.div>
         </Link>
 
