@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/seo-tools-fullstack/',
+  base: '/seo-tools/',
   server: {
     port: 5173,
     proxy: {
