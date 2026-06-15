@@ -427,6 +427,111 @@ const tools = [
     features: ['12 quick presets', 'Human-readable', 'Next 5 run times', 'Copy cron string'],
     color: '#fbbc04',
     badge: 'Dev'
+  },
+  {
+    id: 30,
+    title: 'UUID Generator',
+    description: 'Generate UUIDs (v1, v4, NIL) — customize format and bulk generate.',
+    icon: (
+      <svg viewBox="0 0 24 24" width="28" height="28">
+        <defs><linearGradient id="uuidGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stopColor="#4285f4" /><stop offset="100%" stopColor="#ea4335" /></linearGradient></defs>
+        <path fill="url(#uuidGrad)" d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+      </svg>
+    ),
+    path: '/uuid-generator',
+    features: ['v1/v4/NIL', 'Uppercase option', 'No dashes', 'Bulk generate'],
+    color: '#4285f4',
+    badge: 'Dev'
+  },
+  {
+    id: 31,
+    title: 'Timestamp Converter',
+    description: 'Convert Unix timestamps to dates and vice versa with live clock.',
+    icon: (
+      <svg viewBox="0 0 24 24" width="28" height="28">
+        <defs><linearGradient id="tsGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stopColor="#34a853" /><stop offset="100%" stopColor="#4285f4" /></linearGradient></defs>
+        <path fill="url(#tsGrad)" d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+      </svg>
+    ),
+    path: '/timestamp-converter',
+    features: ['Live clock', '10/13 digit', 'ISO 8601', 'Relative time'],
+    color: '#34a853',
+    badge: 'Dev'
+  },
+  {
+    id: 32,
+    title: 'Gradient Generator',
+    description: 'Create linear and radial CSS gradients with live preview.',
+    icon: (
+      <svg viewBox="0 0 24 24" width="28" height="28">
+        <defs><linearGradient id="grdGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stopColor="#ff6b35" /><stop offset="50%" stopColor="#34a853" /><stop offset="100%" stopColor="#4285f4" /></linearGradient></defs>
+        <path fill="url(#grdGrad)" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+      </svg>
+    ),
+    path: '/gradient-generator',
+    features: ['Linear & Radial', '9 presets', 'Multi-color', 'Angle control'],
+    color: '#ff6b35',
+    badge: 'Design'
+  },
+  {
+    id: 33,
+    title: 'Box Shadow',
+    description: 'Create CSS box shadows with live preview and multiple shadows.',
+    icon: (
+      <svg viewBox="0 0 24 24" width="28" height="28">
+        <defs><linearGradient id="bsGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stopColor="#7B1FA2" /><stop offset="100%" stopColor="#ea4335" /></linearGradient></defs>
+        <path fill="url(#bsGrad)" d="M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69zM12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/>
+      </svg>
+    ),
+    path: '/box-shadow-generator',
+    features: ['Multiple shadows', '7 presets', 'Inset support', 'Neumorphism'],
+    color: '#7B1FA2',
+    badge: 'Design'
+  },
+  {
+    id: 34,
+    title: 'Flexbox Playground',
+    description: 'Interactive CSS Flexbox layout tool with live preview.',
+    icon: (
+      <svg viewBox="0 0 24 24" width="28" height="28">
+        <defs><linearGradient id="fbGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stopColor="#00BCD4" /><stop offset="100%" stopColor="#4285f4" /></linearGradient></defs>
+        <path fill="url(#fbGrad)" d="M3 3h8v8H3V3zm0 10h8v8H3v-8zM13 3h8v8h-8V3zm0 10h8v8h-8v-8z"/>
+      </svg>
+    ),
+    path: '/flexbox-playground',
+    features: ['Interactive preview', 'All properties', 'Add/remove items', 'Copy CSS'],
+    color: '#00BCD4',
+    badge: 'Dev'
+  },
+  {
+    id: 35,
+    title: 'CSS Grid Generator',
+    description: 'Create CSS Grid layouts with live preview and presets.',
+    icon: (
+      <svg viewBox="0 0 24 24" width="28" height="28">
+        <defs><linearGradient id="cgGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stopColor="#fbbc04" /><stop offset="100%" stopColor="#34a853" /></linearGradient></defs>
+        <path fill="url(#cgGrad)" d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM8 20H4V4h4v16zm4 0H9V4h3v16zm4 0h-3V4h3v16zm4 0h-3V4h3v16z"/>
+      </svg>
+    ),
+    path: '/css-grid-generator',
+    features: ['Live preview', '5 presets', 'Gap control', 'Custom templates'],
+    color: '#fbbc04',
+    badge: 'Dev'
+  },
+  {
+    id: 36,
+    title: 'Contrast Checker',
+    description: 'Check WCAG accessibility contrast ratios for text readability.',
+    icon: (
+      <svg viewBox="0 0 24 24" width="28" height="28">
+        <defs><linearGradient id="ccGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stopColor="#ea4335" /><stop offset="100%" stopColor="#34a853" /></linearGradient></defs>
+        <path fill="url(#ccGrad)" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18V4c4.41 0 8 3.59 8 8s-3.59 8-8 8z"/>
+      </svg>
+    ),
+    path: '/contrast-checker',
+    features: ['WCAG AA/AAA', 'Live preview', 'Swap colors', '6 presets'],
+    color: '#ea4335',
+    badge: 'A11y'
   }
 ];
 
@@ -458,13 +563,13 @@ const Dashboard = () => {
         <div className="hero-content">
           <motion.div className="hero-badge" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.2, type: 'spring' }}>
             <span className="badge-dot"></span>
-            31 Professional Tools - 100% Free
+            38 Professional Tools - 100% Free
           </motion.div>
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.6 }}>
             The Complete SEO<br />Toolkit You Need
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.6 }}>
-            Analyze, audit, track, and optimize your website with 31 powerful tools. 
+            Analyze, audit, track, and optimize your website with 38 powerful tools. 
             No signup, no limits, no BS.
           </motion.p>
           <motion.div className="hero-actions" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.6 }}>
@@ -475,7 +580,7 @@ const Dashboard = () => {
             <a href="#tools" className="btn-secondary">Explore All Tools</a>
           </motion.div>
           <motion.div className="hero-stats" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6, duration: 0.6 }}>
-            <div className="stat-item"><span className="stat-number">31</span><span className="stat-label">Tools</span></div>
+            <div className="stat-item"><span className="stat-number">38</span><span className="stat-label">Tools</span></div>
             <div className="stat-divider"></div>
             <div className="stat-item"><span className="stat-number">100%</span><span className="stat-label">Free</span></div>
             <div className="stat-divider"></div>
@@ -489,7 +594,7 @@ const Dashboard = () => {
       {/* Tools Grid */}
       <section className="tools-section" id="tools">
         <motion.div className="section-header" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-          <h2>31 Powerful Tools</h2>
+          <h2>38 Powerful Tools</h2>
           <p>Everything you need to analyze, audit, and optimize your website</p>
         </motion.div>
 

@@ -36,6 +36,7 @@ const Footer = () => {
     { path: '/hash-generator', label: 'Hash Generator' },
     { path: '/lorem-generator', label: 'Lorem Ipsum' },
     { path: '/color-picker', label: 'Color Picker' },
+    { path: '/contrast-checker', label: 'Contrast Checker' },
   ];
 
   const devTools = [
@@ -43,6 +44,12 @@ const Footer = () => {
     { path: '/text-diff', label: 'Text Diff' },
     { path: '/markdown-preview', label: 'Markdown Preview' },
     { path: '/cron-generator', label: 'Cron Generator' },
+    { path: '/uuid-generator', label: 'UUID Generator' },
+    { path: '/timestamp-converter', label: 'Timestamp Converter' },
+    { path: '/gradient-generator', label: 'Gradient Generator' },
+    { path: '/box-shadow-generator', label: 'Box Shadow' },
+    { path: '/flexbox-playground', label: 'Flexbox Playground' },
+    { path: '/css-grid-generator', label: 'CSS Grid' },
   ];
 
   return (
@@ -65,7 +72,7 @@ const Footer = () => {
               </svg>
               <span>SEO Tools</span>
             </div>
-            <p>31 professional SEO and developer tools. Analyze, audit, and optimize your website for better search rankings. No signup required.</p>
+            <p>38 professional SEO and developer tools. Analyze, audit, and optimize your website for better search rankings. No signup required.</p>
             <div className="footer-badges">
               <span className="footer-badge">100% Free</span>
               <span className="footer-badge">No Signup</span>

@@ -32,6 +32,13 @@ import ColorPicker from './pages/ColorPicker';
 import TextDiff from './pages/TextDiff';
 import MarkdownPreview from './pages/MarkdownPreview';
 import CronGenerator from './pages/CronGenerator';
+import UUIDGenerator from './pages/UUIDGenerator';
+import TimestampConverter from './pages/TimestampConverter';
+import GradientGenerator from './pages/GradientGenerator';
+import BoxShadowGenerator from './pages/BoxShadowGenerator';
+import FlexboxPlayground from './pages/FlexboxPlayground';
+import CSSGridGenerator from './pages/CSSGridGenerator';
+import ContrastChecker from './pages/ContrastChecker';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 
@@ -70,6 +77,13 @@ function AnimatedRoutes() {
         <Route path="/text-diff" element={<TextDiff />} />
         <Route path="/markdown-preview" element={<MarkdownPreview />} />
         <Route path="/cron-generator" element={<CronGenerator />} />
+        <Route path="/uuid-generator" element={<UUIDGenerator />} />
+        <Route path="/timestamp-converter" element={<TimestampConverter />} />
+        <Route path="/gradient-generator" element={<GradientGenerator />} />
+        <Route path="/box-shadow-generator" element={<BoxShadowGenerator />} />
+        <Route path="/flexbox-playground" element={<FlexboxPlayground />} />
+        <Route path="/css-grid-generator" element={<CSSGridGenerator />} />
+        <Route path="/contrast-checker" element={<ContrastChecker />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
       </Routes>
