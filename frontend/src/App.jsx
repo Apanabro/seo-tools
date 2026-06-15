@@ -41,6 +41,9 @@ import CSSGridGenerator from './pages/CSSGridGenerator';
 import ContrastChecker from './pages/ContrastChecker';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
+import Contact from './pages/Contact';
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -86,6 +89,9 @@ function AnimatedRoutes() {
         <Route path="/contrast-checker" element={<ContrastChecker />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </AnimatePresence>
   );
