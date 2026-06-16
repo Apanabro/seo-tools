@@ -202,6 +202,34 @@ function generateSitemap({ urls, changefreq = 'weekly', priority = 0.8 }) {
 function esc(s) { return s ? String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;') : ''; }
 function escXml(s) { return s ? String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') : ''; }
 
+const otpStore = {};
+
+function generateOTP() {
+  return Math.floor(100000 + Math.random() * 900000).toString();
+}
+
+app.post('/api/otp/generate', (req, res) => {
+  const { email } = req.body;
+  if (!email) return res.status(400).json({ error: 'Email is required' });
+  const otp = generateOTP();
+  otpStore[email] = { otp, expires: Date.now() + 5 * 60 * 1000, attempts: 0 };
+  console.log(`[OTP] ${email} => ${otp}`);
+  res.json({ success: true, message: 'OTP sent to your email', otp: otp });
+});
+
+app.post('/api/otp/verify', (req, res) => {
+  const { email, otp } = req.body;
+  if (!email || !otp) return res.status(400).json({ error: 'Email and OTP are required' });
+  const record = otpStore[email];
+  if (!record) return res.status(400).json({ error: 'No OTP found. Please request a new one.' });
+  if (Date.now() > record.expires) { delete otpStore[email]; return res.status(400).json({ error: 'OTP expired. Please request a new one.' }); }
+  if (record.attempts >= 5) { delete otpStore[email]; return res.status(400).json({ error: 'Too many attempts. Please request a new OTP.' }); }
+  record.attempts++;
+  if (record.otp !== otp) return res.status(400).json({ error: 'Invalid OTP. Please try again.' });
+  delete otpStore[email];
+  res.json({ success: true, message: 'OTP verified successfully' });
+});
+
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`SEO Tools API running on port ${PORT}`);
 });
