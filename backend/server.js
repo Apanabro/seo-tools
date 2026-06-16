@@ -1,9 +1,18 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const nodemailer = require('nodemailer');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.GMAIL_USER || 'jy306648@gmail.com',
+    pass: process.env.GMAIL_PASS || 'biwt xpcy lvwv kvtd'
+  }
+});
 
 app.use(cors({ origin: process.env.CORS_ORIGIN || '*', methods: ['GET', 'POST'], allowedHeaders: ['Content-Type'] }));
 app.use(express.json());
@@ -208,13 +217,36 @@ function generateOTP() {
   return Math.floor(100000 + Math.random() * 900000).toString();
 }
 
-app.post('/api/otp/generate', (req, res) => {
+app.post('/api/otp/generate', async (req, res) => {
   const { email } = req.body;
   if (!email) return res.status(400).json({ error: 'Email is required' });
   const otp = generateOTP();
   otpStore[email] = { otp, expires: Date.now() + 5 * 60 * 1000, attempts: 0 };
-  console.log(`[OTP] ${email} => ${otp}`);
-  res.json({ success: true, message: 'OTP sent to your email', otp: otp });
+  try {
+    await transporter.sendMail({
+      from: '"SEO Tools" <' + (process.env.GMAIL_USER || 'jy306648@gmail.com') + '>',
+      to: email,
+      subject: 'Your OTP Verification Code - SEO Tools',
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 480px; margin: 0 auto; padding: 32px;">
+          <div style="text-align: center; margin-bottom: 24px;">
+            <h2 style="color: #1a73e8;">SEO Tools</h2>
+          </div>
+          <div style="background: #f8f9fa; border-radius: 16px; padding: 32px; text-align: center;">
+            <h3 style="color: #202124; margin-bottom: 8px;">Verify Your Email</h3>
+            <p style="color: #5f6368; margin-bottom: 24px;">Use the following code to complete your sign in:</p>
+            <div style="font-size: 32px; font-weight: bold; letter-spacing: 8px; color: #1a73e8; background: white; padding: 16px 32px; border-radius: 12px; display: inline-block;">${otp}</div>
+            <p style="color: #5f6368; margin-top: 24px; font-size: 13px;">This code expires in 5 minutes.</p>
+          </div>
+          <p style="color: #9aa0a6; font-size: 12px; text-align: center; margin-top: 24px;">If you didn't request this, you can safely ignore this email.</p>
+        </div>
+      `
+    });
+    res.json({ success: true, message: 'OTP sent to your email' });
+  } catch (err) {
+    console.error('[OTP] Email send failed:', err.message);
+    res.status(500).json({ error: 'Failed to send OTP email. Please try again.' });
+  }
 });
 
 app.post('/api/otp/verify', (req, res) => {
