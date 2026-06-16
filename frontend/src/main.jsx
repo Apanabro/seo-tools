@@ -5,6 +5,10 @@ import { ThemeProvider } from './context/ThemeContext'
 import './styles/global.css'
 import App from './App.jsx'
 
+if (!window.location.hash || window.location.hash === '#') {
+  window.location.replace('#/');
+}
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ThemeProvider>

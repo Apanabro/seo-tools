@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 @theme {
   --color-google-blue: #1a73e8;
   --color-google-blue-dark: #1557b0;
@@ -89,6 +91,32 @@
   .status-badge.yellow { background: var(--color-google-yellow-light); color: #c77700; }
   .status-badge.blue { background: var(--color-google-blue-light); color: var(--color-google-blue); }
   .status-badge.gray { background: var(--color-surface-container); color: var(--color-on-surface-variant); }
+}
+
+[data-theme="dark"] {
+  --color-surface: #1e1e2e;
+  --color-surface-dim: #11111b;
+  --color-surface-container: #181825;
+  --color-on-surface: #cdd6f4;
+  --color-on-surface-variant: #a6adc8;
+  --color-outline: #313244;
+  --color-outline-variant: #45475a;
+}
+
+[data-theme="dark"] body {
+  background: var(--color-surface-dim);
+  color: var(--color-on-surface);
+}
+
+[data-theme="dark"] .card {
+  background: var(--color-surface);
+  border-color: var(--color-outline-variant);
+}
+
+[data-theme="dark"] .input-field {
+  background: var(--color-surface);
+  color: var(--color-on-surface);
+  border-color: var(--color-outline);
 }
 
 @keyframes spin { to { transform: rotate(360deg); } }

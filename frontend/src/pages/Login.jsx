@@ -3,6 +3,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useAuth } from '../context/AuthContext';
 
+const GOOGLE_CLIENT_ID = '683507397801-c0tn79l4jvlctfc4kjorgmfql8g13m5e.apps.googleusercontent.com';
+const REDIRECT_URI = 'https://apanabro.github.io/seo-tools/';
+
 const Login = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
@@ -12,10 +15,8 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
 
   const handleGoogleLogin = () => {
-    const clientId = '683507397801-c0tn79l4jvlctfc4kjorgmfql8g13m5e.apps.googleusercontent.com';
-    const redirectUri = window.location.origin + '/seo-tools/';
     const scope = 'openid email profile';
-    const url = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=token&scope=${encodeURIComponent(scope)}&prompt=select_account`;
+    const url = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${GOOGLE_CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&response_type=token&scope=${encodeURIComponent(scope)}&prompt=select_account`;
     window.location.href = url;
   };
 
@@ -29,18 +30,18 @@ const Login = () => {
   };
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="min-h-screen flex items-center justify-center bg-gray-50 px-4 py-12">
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-950 px-4 py-12">
       <div className="w-full max-w-md">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 p-8">
           <div className="text-center mb-8">
             <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 via-green-500 to-yellow-500 flex items-center justify-center mx-auto mb-4 shadow-md">
               <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round"><circle cx="11" cy="11" r="7"/><line x1="16" y1="16" x2="21" y2="21"/></svg>
             </div>
-            <h1 className="text-2xl font-bold text-gray-900">Welcome Back</h1>
-            <p className="text-gray-500 mt-1">Sign in to access your SEO tools</p>
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Welcome Back</h1>
+            <p className="text-gray-500 dark:text-gray-400 mt-1">Sign in to access your SEO tools</p>
           </div>
 
-          <button onClick={handleGoogleLogin} type="button" className="w-full flex items-center justify-center gap-3 px-4 py-3 border border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors">
+          <button onClick={handleGoogleLogin} type="button" className="w-full flex items-center justify-center gap-3 px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-xl text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
             <svg viewBox="0 0 24 24" width="20" height="20">
               <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/>
               <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
@@ -52,31 +53,31 @@ const Login = () => {
 
           <div className="relative my-6">
             <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-gray-200" />
+              <div className="w-full border-t border-gray-200 dark:border-gray-700" />
             </div>
             <div className="relative flex justify-center text-sm">
-              <span className="px-4 bg-white text-gray-500">or sign in with email</span>
+              <span className="px-4 bg-white dark:bg-gray-900 text-gray-500 dark:text-gray-400">or sign in with email</span>
             </div>
           </div>
 
-          {error && <div className="mb-4 p-3 bg-red-50 text-red-600 text-sm rounded-xl border border-red-100">{error}</div>}
+          {error && <div className="mb-4 p-3 bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 text-sm rounded-xl border border-red-100 dark:border-red-800">{error}</div>}
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label htmlFor="email" className="block text-sm font-semibold text-gray-500 mb-1.5">Email</label>
-              <input type="email" id="email" placeholder="you@example.com" value={email} onChange={(e) => setEmail(e.target.value)} required className="w-full px-4 py-3 border border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all" />
+              <label htmlFor="email" className="block text-sm font-semibold text-gray-500 dark:text-gray-400 mb-1.5">Email</label>
+              <input type="email" id="email" placeholder="you@example.com" value={email} onChange={(e) => setEmail(e.target.value)} required className="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-xl text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all" />
             </div>
             <div>
-              <label htmlFor="password" className="block text-sm font-semibold text-gray-500 mb-1.5">Password</label>
-              <input type="password" id="password" placeholder="Enter your password" value={password} onChange={(e) => setPassword(e.target.value)} required className="w-full px-4 py-3 border border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all" />
+              <label htmlFor="password" className="block text-sm font-semibold text-gray-500 dark:text-gray-400 mb-1.5">Password</label>
+              <input type="password" id="password" placeholder="Enter your password" value={password} onChange={(e) => setPassword(e.target.value)} required className="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-xl text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all" />
             </div>
             <button type="submit" disabled={loading} className="w-full py-3 px-4 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-sm hover:shadow-md">
               {loading ? 'Signing in...' : 'Sign In'}
             </button>
           </form>
 
-          <p className="mt-6 text-center text-sm text-gray-500">
-            Don't have an account? <Link to="/signup" className="text-blue-600 font-semibold hover:underline">Sign Up</Link>
+          <p className="mt-6 text-center text-sm text-gray-500 dark:text-gray-400">
+            Don't have an account? <Link to="/signup" className="text-blue-600 dark:text-blue-400 font-semibold hover:underline">Sign Up</Link>
           </p>
         </motion.div>
       </div>

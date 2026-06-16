@@ -53,7 +53,7 @@ const features = [
 ];
 
 const Dashboard = () => (
-  <div className="min-h-screen">
+  <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
     <section className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white">
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-20 w-72 h-72 bg-white rounded-full blur-3xl" />
@@ -94,23 +94,23 @@ const Dashboard = () => (
 
     <section id="tools" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold text-gray-900 mb-3">38 Powerful Tools</h2>
-        <p className="text-gray-500 text-lg">Everything you need to analyze and optimize your website</p>
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-3">38 Powerful Tools</h2>
+        <p className="text-gray-500 dark:text-gray-400 text-lg">Everything you need to analyze and optimize your website</p>
       </div>
       <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {tools.map((tool) => (
           <motion.div key={tool.path} variants={fadeUp}>
-            <Link to={tool.path} className="block p-5 bg-white rounded-2xl border border-gray-100 hover:border-gray-200 hover:shadow-lg transition-all group no-underline">
+            <Link to={tool.path} className="block p-5 bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-gray-200 dark:hover:border-gray-700 hover:shadow-lg transition-all group no-underline">
               <div className="flex items-start gap-4">
                 <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${tool.color} flex items-center justify-center text-xl shadow-sm group-hover:shadow-md transition-shadow flex-shrink-0`}>
                   {tool.icon}
                 </div>
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-2 mb-1">
-                    <h3 className="font-semibold text-gray-900 text-sm truncate">{tool.title}</h3>
-                    {tool.tag && <span className="px-2 py-0.5 bg-blue-50 text-blue-600 text-[10px] font-semibold rounded-full flex-shrink-0">{tool.tag}</span>}
+                    <h3 className="font-semibold text-gray-900 dark:text-gray-100 text-sm truncate">{tool.title}</h3>
+                    {tool.tag && <span className="px-2 py-0.5 bg-blue-50 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 text-[10px] font-semibold rounded-full flex-shrink-0">{tool.tag}</span>}
                   </div>
-                  <p className="text-xs text-gray-500 leading-relaxed line-clamp-2">{tool.desc}</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">{tool.desc}</p>
                 </div>
               </div>
             </Link>
@@ -119,18 +119,18 @@ const Dashboard = () => (
       </motion.div>
     </section>
 
-    <section className="bg-white border-y border-gray-100">
+    <section className="bg-white dark:bg-gray-900 border-y border-gray-100 dark:border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-3">Why Choose Our Tools?</h2>
-          <p className="text-gray-500">Built for professionals, designed for everyone</p>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-3">Why Choose Our Tools?</h2>
+          <p className="text-gray-500 dark:text-gray-400">Built for professionals, designed for everyone</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((f, i) => (
-            <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="p-6 rounded-2xl border border-gray-100 hover:shadow-md transition-all">
+            <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="p-6 rounded-2xl border border-gray-100 dark:border-gray-800 hover:shadow-md transition-all">
               <span className="text-3xl mb-4 block">{f.icon}</span>
-              <h3 className="font-semibold text-gray-900 mb-2">{f.title}</h3>
-              <p className="text-sm text-gray-500">{f.desc}</p>
+              <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">{f.title}</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400">{f.desc}</p>
             </motion.div>
           ))}
         </div>

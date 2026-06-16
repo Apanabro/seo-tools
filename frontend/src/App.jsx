@@ -44,6 +44,7 @@ import Signup from './pages/Signup';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import Contact from './pages/Contact';
+import OtpVerify from './pages/OtpVerify';
 
 function AppLayout() {
   const location = useLocation();
@@ -95,6 +96,7 @@ function AppLayout() {
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/verify-otp" element={<OtpVerify />} />
           </Routes>
         </AnimatePresence>
       </main>
